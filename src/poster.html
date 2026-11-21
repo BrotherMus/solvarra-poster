@@ -1,243 +1,125 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>SOLVARRA</title>
+<html><head><meta charset="utf-8"><title>MIRASORA</title>
 <style>
-  html,body{margin:0;padding:0;background:#f3e6cc;width:1024px;height:1024px;overflow:hidden}
+  html,body{margin:0;padding:0;background:#f3eee2;width:1024px;height:1024px;overflow:hidden}
   svg{display:block}
-  .title{font-family:'Bahnschrift','Segoe UI',sans-serif;font-weight:700;font-variation-settings:'wght' 700,'wdth' 78}
+  .title{font-family:'Bahnschrift','Segoe UI',sans-serif;font-variation-settings:'wght' 700,'wdth' 82}
   .sub{font-family:'Bahnschrift','Segoe UI',sans-serif;font-variation-settings:'wght' 600,'wdth' 90}
 </style></head>
 <body>
-<svg id="p" xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
 <defs>
   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#141a46"/>
-    <stop offset="0.30" stop-color="#3b2766"/>
-    <stop offset="0.52" stop-color="#9c3f78"/>
-    <stop offset="0.68" stop-color="#e86f63"/>
-    <stop offset="0.80" stop-color="#ffb066"/>
-    <stop offset="0.86" stop-color="#ffd58a"/>
+    <stop offset="0" stop-color="#0e3f9e"/>
+    <stop offset="0.35" stop-color="#2c7fe0"/>
+    <stop offset="0.62" stop-color="#7cc4f4"/>
+    <stop offset="0.80" stop-color="#ffd9b8"/>
+    <stop offset="0.90" stop-color="#ffb995"/>
   </linearGradient>
-  <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#f3a865"/>
-    <stop offset="0.10" stop-color="#c9707a"/>
-    <stop offset="0.35" stop-color="#2f7d93"/>
-    <stop offset="1" stop-color="#0b3350"/>
-  </linearGradient>
-  <radialGradient id="sunglow" cx="0.5" cy="0.5" r="0.5">
-    <stop offset="0" stop-color="#fff3c4" stop-opacity="0.95"/>
-    <stop offset="0.25" stop-color="#ffd27e" stop-opacity="0.6"/>
-    <stop offset="0.6" stop-color="#ff9a5e" stop-opacity="0.22"/>
-    <stop offset="1" stop-color="#ff7a5a" stop-opacity="0"/>
+  <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
+    <stop offset="0.12" stop-color="#fffbe6" stop-opacity="0.95"/>
+    <stop offset="0.4" stop-color="#ffe9b0" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#ffd59a" stop-opacity="0"/>
   </radialGradient>
-  <radialGradient id="bellglow" cx="0.5" cy="0.5" r="0.5">
-    <stop offset="0" stop-color="#fff6cf" stop-opacity="0.95"/>
-    <stop offset="0.35" stop-color="#ffd36b" stop-opacity="0.45"/>
-    <stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+  <radialGradient id="treeglow" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#ffe6f2" stop-opacity="0.9"/>
+    <stop offset="0.5" stop-color="#ffb7d8" stop-opacity="0.35"/>
+    <stop offset="1" stop-color="#ff9cc8" stop-opacity="0"/>
   </radialGradient>
-  <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#fff6d6"/>
-    <stop offset="0.45" stop-color="#ffd677"/>
-    <stop offset="1" stop-color="#e3922f"/>
+  <linearGradient id="rockU" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#5a4a7a"/>
+    <stop offset="0.6" stop-color="#8a6f9a"/>
+    <stop offset="1" stop-color="#d8a7a4"/>
   </linearGradient>
-  <linearGradient id="bell" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#b8661c"/>
-    <stop offset="0.35" stop-color="#ffe08a"/>
-    <stop offset="0.6" stop-color="#f7b746"/>
-    <stop offset="1" stop-color="#9a4f16"/>
+  <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#b8ec6e"/>
+    <stop offset="0.4" stop-color="#5fbf55"/>
+    <stop offset="1" stop-color="#1f7a4a"/>
   </linearGradient>
-  <linearGradient id="tower" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#ffe9cf"/>
-    <stop offset="0.55" stop-color="#f6d2b4"/>
-    <stop offset="1" stop-color="#b9808a"/>
+  <linearGradient id="titlefill" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffffff"/>
+    <stop offset="0.6" stop-color="#fff1f7"/>
+    <stop offset="1" stop-color="#ffc6df"/>
   </linearGradient>
-  <linearGradient id="rock" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#4a2747"/>
-    <stop offset="0.7" stop-color="#7b3f57"/>
-    <stop offset="1" stop-color="#c0675f"/>
+  <linearGradient id="fall" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#e6f6ff" stop-opacity="0.1"/>
   </linearGradient>
-  <linearGradient id="cliff" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#3a1f45"/>
-    <stop offset="1" stop-color="#7a3d58"/>
-  </linearGradient>
-  <linearGradient id="rail" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#ffd3a0"/>
-    <stop offset="0.3" stop-color="#d99a7c"/>
-    <stop offset="1" stop-color="#7c4659"/>
-  </linearGradient>
-  <filter id="grain" x="0" y="0" width="100%" height="100%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
-    <feColorMatrix type="saturate" values="0"/>
-    <feComponentTransfer><feFuncA type="table" tableValues="0 0.07"/></feComponentTransfer>
-    <feComposite in2="SourceGraphic" operator="in"/>
-  </filter>
-  <linearGradient id="beamR" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#fff2c2" stop-opacity="0.9"/>
-    <stop offset="1" stop-color="#ffd27e" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="beamL" x1="1" y1="0" x2="0" y2="0">
-    <stop offset="0" stop-color="#fff2c2" stop-opacity="0.9"/>
-    <stop offset="1" stop-color="#ffd27e" stop-opacity="0"/>
-  </linearGradient>
-  <radialGradient id="haze" cx="0.5" cy="0.5" r="0.5">
-    <stop offset="0" stop-color="#ffd9a0" stop-opacity="0.55"/>
-    <stop offset="1" stop-color="#ffb07a" stop-opacity="0"/>
-  </radialGradient>
-  <linearGradient id="meadow" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#e3b85e"/>
-    <stop offset="0.35" stop-color="#8a8a42"/>
-    <stop offset="1" stop-color="#3a4630"/>
-  </linearGradient>
-  <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
-  <clipPath id="frame"><rect x="28" y="28" width="968" height="968"/></clipPath>
+  <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+  <clipPath id="frame"><rect x="28" y="28" width="968" height="914"/></clipPath>
 </defs>
 
-<rect width="1024" height="1024" fill="#f3e6cc"/>
+<rect width="1024" height="1024" fill="#f3eee2"/>
 <g clip-path="url(#frame)">
-  <!-- sky -->
-  <rect x="0" y="0" width="1024" height="660" fill="url(#sky)"/>
-  <g id="stars"></g>
-  <!-- long sunset clouds -->
-  <g id="clouds"></g>
-  <!-- sun -->
-  <circle cx="662" cy="590" r="330" fill="url(#sunglow)"/>
-  <circle cx="662" cy="600" r="112" fill="#ffe7a6"/>
-  <circle cx="662" cy="600" r="112" fill="none" stroke="#fff4cf" stroke-width="3" opacity="0.6"/>
-  <!-- distant isles -->
-  <path d="M760 642 Q820 610 870 622 Q930 600 1000 628 L1024 642 Z" fill="#9b4a73" opacity="0.75"/>
-  <path d="M430 642 Q470 628 520 634 Q540 630 560 642 Z" fill="#a8507a" opacity="0.6"/>
+  <rect x="0" y="0" width="1024" height="960" fill="url(#sky)"/>
+  <!-- towering summer cumulus, lit gold on the sun side -->
+  <g id="cumulus"></g>
+  <!-- the sun and its rays -->
+  <g id="rays" opacity="0.35"></g>
+  <circle cx="190" cy="330" r="260" fill="url(#sun)"/>
+  <!-- distant little floating isles -->
+  <g id="isles"></g>
+  <!-- sea of clouds far below -->
+  <g id="cloudsea"></g>
 
-  <!-- sea -->
-  <rect x="0" y="640" width="1024" height="384" fill="url(#sea)"/>
-  <ellipse cx="640" cy="645" rx="520" ry="60" fill="url(#haze)"/>
-  <g id="sunpath"></g>
-  <g id="ripples"></g>
+  <!-- the floating isle of Mirasora -->
+  <g id="falls"></g>
+  <path d="M500 500 Q520 470 600 462 Q700 452 800 466 Q870 476 880 500 Q860 540 820 580 Q790 640 740 700 Q720 740 700 790 Q680 730 650 690 Q600 630 560 590 Q520 550 500 500 Z" fill="url(#rockU)"/>
+  <path d="M700 790 Q720 740 740 700 Q790 640 820 580 Q860 540 880 500 L840 520 Q800 600 760 650 Q730 700 700 790 Z" fill="#f2b9a8" opacity="0.5"/>
+  <g id="crags"></g>
+  <path d="M496 500 Q520 466 600 456 Q700 446 800 460 Q872 470 884 500 Q850 512 690 514 Q540 514 496 500 Z" fill="#7fd36a"/>
+  <path d="M496 500 Q540 514 690 514 Q850 512 884 500 Q850 522 690 524 Q540 524 496 500 Z" fill="#4f9f55"/>
+  <g id="houses"></g>
+  <!-- the great sakura -->
+  <circle cx="690" cy="360" r="230" fill="url(#treeglow)"/>
+  <path d="M680 500 C684 460 676 430 660 404 L672 398 C684 416 690 430 692 444 C698 420 712 404 730 392 L738 400 C718 414 706 440 704 470 C702 482 704 492 708 500 Z" fill="#6a4258"/>
+  <g id="canopy"></g>
+  <g id="petals"></g>
 
-  <!-- sea stack and Sunbell tower -->
-  <path d="M548 660 L566 612 L584 590 L600 566 L626 556 L700 552 L728 562 L748 590 L764 618 L780 660 Z" fill="url(#rock)"/>
-  <path d="M700 552 L728 562 L748 590 L764 618 L780 660 L742 660 L732 610 L712 576 Z" fill="#d97a64" opacity="0.55"/>
-  <ellipse cx="664" cy="664" rx="140" ry="8" fill="#ffd28a" opacity="0.35"/>
-  <g id="reflect" opacity="0.35"></g>
-  <!-- tower shaft -->
-  <path d="M630 558 L640 312 L688 312 L698 558 Z" fill="url(#tower)"/>
-  <g fill="#e2a24a" opacity="0.9">
-    <rect x="636" y="470" width="58" height="7"/>
-    <rect x="638" y="390" width="54" height="6"/>
-  </g>
-  <g fill="#ffcf6e">
-    <path d="M658 530 h12 v-14 a6 6 0 0 0 -12 0 z"/>
-    <path d="M659 448 h10 v-13 a5 5 0 0 0 -10 0 z"/>
-    <path d="M659 368 h10 v-13 a5 5 0 0 0 -10 0 z"/>
-  </g>
-  <!-- gallery -->
-  <rect x="624" y="300" width="80" height="14" rx="2" fill="#f7dcc0"/>
-  <rect x="624" y="312" width="80" height="4" fill="#a8606e"/>
-  <!-- the Sunbell's two soft beams across the evening sky -->
-  <!-- bell glow -->
-  <circle cx="664" cy="262" r="185" fill="url(#bellglow)"/>
-  <g id="rays" stroke="#ffe7a3" stroke-linecap="round" opacity="0.55"></g>
-  <!-- belvedere with open arches -->
-  <rect x="632" y="236" width="64" height="64" fill="#2b1e4d" opacity="0.35"/>
-  <g fill="#ffeacd">
-    <rect x="630" y="232" width="9" height="68"/>
-    <rect x="660" y="232" width="8" height="68" opacity="0"/>
-    <rect x="689" y="232" width="9" height="68"/>
-  </g>
-  <!-- the golden bell -->
-  <path d="M664 240 C650 240 646 252 646 266 C646 280 641 286 636 292 L692 292 C687 286 682 280 682 266 C682 252 678 240 664 240 Z" fill="url(#bell)"/>
-  <rect x="634" y="290" width="60" height="5" rx="2" fill="#b8661c"/>
-  <circle cx="664" cy="298" r="5" fill="#ffd66e"/>
-  <!-- dome and spire -->
-  <rect x="624" y="226" width="80" height="10" rx="2" fill="#f7dcc0"/>
-  <path d="M630 226 Q664 168 698 226 Z" fill="#e7a24a"/>
-  <path d="M664 172 Q690 190 698 226 L680 226 Q676 196 664 172 Z" fill="#b8661c" opacity="0.6"/>
-  <rect x="662" y="150" width="4" height="26" fill="#e7a24a"/>
-  <circle cx="664" cy="148" r="5" fill="#ffe08a"/>
-
-  <!-- left cliff with terraced town -->
-  <path d="M0 400 L60 392 L120 410 L190 430 L250 468 L300 510 L350 556 L400 600 L440 640 L470 668 L0 668 Z" fill="url(#cliff)"/>
-  <g id="town"></g>
-  <g id="cypress"></g>
-
-  <!-- boats -->
-  <g id="boats"></g>
-  <!-- gulls -->
-  <g fill="none" stroke="#2a1d45" stroke-width="2.4" stroke-linecap="round" opacity="0.8">
-    <path d="M790 250 q8 -8 16 0 q8 -8 16 0"/>
-    <path d="M840 290 q6 -6 12 0 q6 -6 12 0"/>
-    <path d="M520 360 q6 -6 12 0 q6 -6 12 0"/>
-  </g>
-
-  <!-- the kite, flying high toward the Sunbell -->
-  <path d="M452 820 Q640 640 842 420" stroke="#fdf6e8" stroke-width="1.6" fill="none" opacity="0.9"/>
-  <g transform="translate(842 420) rotate(-18)">
-    <path d="M0 -38 L26 0 L0 44 L-26 0 Z" fill="#e8463c"/>
-    <path d="M0 -38 L26 0 L0 0 Z" fill="#ffc93c"/>
-    <path d="M0 0 L-26 0 L0 44 Z" fill="#1f7fb8"/>
-    <path d="M0 44 q-10 16 0 28 q10 14 -2 28 q-10 14 4 30" stroke="#ffd34d" stroke-width="2.5" fill="none"/>
-    <path d="M-6 66 l12 -4 M-8 92 l12 -2 M-4 118 l12 2" stroke="#e8463c" stroke-width="5" stroke-linecap="round"/>
-  </g>
-
-  <!-- the headland meadow, a sandy path running down to the bay -->
-  <path d="M0 792 Q260 760 520 790 Q780 820 1024 776 L1024 960 L0 960 Z" fill="url(#meadow)"/>
-  <path d="M0 792 Q260 760 520 790 Q780 820 1024 776" stroke="#ffd98a" stroke-width="5" fill="none" opacity="0.9"/>
-  <path d="M520 960 C560 900 600 860 560 830 C540 815 548 800 566 794 L578 796 C566 806 572 818 590 832 C640 868 640 910 640 960 Z" fill="#f2dcae"/>
-  <path d="M580 960 C600 910 610 880 590 850" stroke="#e2c48e" stroke-width="3" fill="none"/>
+  <!-- foreground hill -->
+  <path d="M0 800 Q220 740 470 770 Q700 800 1024 760 L1024 960 L0 960 Z" fill="url(#hill)"/>
+  <path d="M0 800 Q220 740 470 770 Q700 800 1024 760" stroke="#e8ffb0" stroke-width="4" fill="none" opacity="0.8"/>
   <g id="grass"></g>
-  <g id="wildflowers"></g>
+  <g id="flowers"></g>
 
-  <!-- an old olive tree framing the right side -->
+  <!-- the girl on the hill, hat in hand, hair in the wind -->
   <g>
-    <path d="M930 960 C934 900 912 860 920 820 C926 790 900 760 880 740 L896 734 C916 752 936 772 944 800 C950 770 968 750 990 740 L996 750 C976 764 962 790 960 820 C956 860 972 900 976 960 Z" fill="#6b5240"/>
-    <path d="M944 820 C948 860 962 900 966 960 L976 960 C972 900 956 860 960 820 Z" fill="#4a3a2e"/>
-    <g id="olive"></g>
-  </g>
-
-  <!-- mother and child on the grass, the child flying the kite -->
-  <g>
-    <!-- mother, sitting, seen from behind -->
-    <path d="M362 896 C356 860 364 836 384 828 C404 836 412 860 408 896 Z" fill="#2e8f8a"/>
-    <path d="M396 832 C408 846 412 872 408 896 L398 896 C400 870 398 848 390 836 Z" fill="#7cd0c4" opacity="0.6"/>
-    <path d="M326 912 L344 892 L436 892 L452 912 Z" fill="#e2493f"/>
-    <path d="M356 892 L346 912 M378 892 L374 912 M402 892 L404 912 M424 892 L432 912" stroke="#fff3e0" stroke-width="4"/>
-    <path d="M362 876 C350 884 346 896 352 904" stroke="#2e8f8a" stroke-width="10" stroke-linecap="round" fill="none"/>
-    <rect x="379" y="814" width="11" height="14" rx="4" fill="#a86a50"/>
-    <circle cx="384" cy="806" r="15" fill="#3b2418"/>
-    <circle cx="384" cy="788" r="8" fill="#3b2418"/>
-    <path d="M370 804 q14 -10 28 0" stroke="#f2b84a" stroke-width="3" fill="none"/>
-    <!-- her arm around the child -->
-    <path d="M404 846 C420 852 432 852 440 846" stroke="#2e8f8a" stroke-width="9" stroke-linecap="round" fill="none"/>
-    <!-- child, standing, one arm up holding the kite string -->
-    <path d="M436 900 L438 870 L446 870 L448 900 Z" fill="#f7f1e3"/>
-    <path d="M454 900 L452 870 L460 870 L462 900 Z" fill="#f7f1e3"/>
-    <path d="M432 874 C430 852 436 838 448 834 C460 838 466 852 464 874 Z" fill="#f2c13c"/>
-    <path d="M456 840 C458 830 456 822 452 818" stroke="#f2c13c" stroke-width="7" stroke-linecap="round" fill="none"/>
-    <circle cx="452" cy="818" r="4" fill="#a86a50"/>
-    <circle cx="448" cy="822" r="0" fill="none"/>
-    <circle cx="447" cy="824" r="11" fill="#5a3420"/>
-    <path d="M438 820 q9 -10 18 0" stroke="#7a4a2c" stroke-width="3" fill="none"/>
+    <path d="M262 768 C250 730 252 690 262 668 L278 664 C276 700 284 740 300 770 Z" fill="#26346a"/>
+    <path d="M262 676 C232 680 214 700 196 712 C214 708 236 704 256 700 Z" fill="#26346a"/>
+    <path d="M266 672 C226 670 200 690 176 694 C204 700 236 690 262 686 Z" fill="#33468a"/>
+    <path d="M250 900 C246 840 252 790 262 760 C268 744 300 744 306 760 C316 790 326 840 322 900 Z" fill="#ffffff"/>
+    <path d="M296 752 C310 776 322 840 322 900 L306 900 C306 846 300 790 288 760 Z" fill="#cfe0f6"/>
+    <path d="M264 758 C252 740 244 724 242 708" stroke="#ffffff" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <path d="M304 760 C318 744 330 726 336 704" stroke="#ffffff" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <circle cx="242" cy="704" r="5" fill="#f2c6a8"/>
+    <ellipse cx="342" cy="694" rx="30" ry="10" fill="#f6dfa0" transform="rotate(-24 342 694)"/>
+    <path d="M332 690 Q342 674 354 686" fill="#f2cf80"/>
+    <circle cx="282" cy="716" r="20" fill="#26346a"/>
+    <path d="M282 696 C300 700 304 724 298 744 C292 730 286 720 282 716 Z" fill="#33468a"/>
+    <path d="M300 712 a20 20 0 0 1 -4 18" stroke="#ffe7c2" stroke-width="3" fill="none"/>
+    <rect x="276" y="734" width="12" height="12" rx="3" fill="#f2c6a8"/>
+    <path d="M262 900 h22 v10 h-22 z M292 900 h22 v10 h-22 z" fill="#f2c6a8"/>
   </g>
 
   <!-- title -->
-  <text x="512" y="196" text-anchor="middle" class="title" font-size="186" textLength="880" lengthAdjust="spacingAndGlyphs" fill="#1b1036" opacity="0.55" transform="translate(5,7)">SOLVARRA</text>
-  <text x="512" y="196" text-anchor="middle" class="title" font-size="186" textLength="880" lengthAdjust="spacingAndGlyphs" fill="#9a4a1e" transform="translate(2,3)">SOLVARRA</text>
-  <text x="512" y="196" text-anchor="middle" class="title" font-size="186" textLength="880" lengthAdjust="spacingAndGlyphs" fill="url(#gold)">SOLVARRA</text>
-  <line x1="150" y1="226" x2="874" y2="226" stroke="#ffd98c" stroke-width="2" opacity="0.7"/>
-
-  <rect x="0" y="0" width="1024" height="1024" filter="url(#grain)" fill="#000"/>
+  <text x="512" y="188" text-anchor="middle" class="title" font-size="176" textLength="860" lengthAdjust="spacingAndGlyphs" fill="#0b2f7a" opacity="0.6" transform="translate(5,7)">MIRASORA</text>
+  <text x="512" y="188" text-anchor="middle" class="title" font-size="176" textLength="860" lengthAdjust="spacingAndGlyphs" fill="#e0558f" transform="translate(2,3)">MIRASORA</text>
+  <text x="512" y="188" text-anchor="middle" class="title" font-size="176" textLength="860" lengthAdjust="spacingAndGlyphs" fill="url(#titlefill)">MIRASORA</text>
+  <g id="sparkle"></g>
 </g>
 
-<!-- bottom band with subtitle -->
-<rect x="28" y="942" width="968" height="54" fill="#f3e6cc"/>
-<text x="512" y="980" text-anchor="middle" class="sub" font-size="31" letter-spacing="9" fill="#3b2140">ISLE OF THE SUNBELL</text>
-<rect x="120" y="969" width="120" height="2" fill="#c76a3a"/>
-<rect x="784" y="969" width="120" height="2" fill="#c76a3a"/>
-<rect x="28" y="28" width="968" height="968" fill="none" stroke="#3b2140" stroke-width="2"/>
+<rect x="28" y="942" width="968" height="54" fill="#f3eee2"/>
+<text x="512" y="980" text-anchor="middle" class="sub" font-size="30" letter-spacing="8" fill="#22306a">THE FLOATING SAKURA ISLE</text>
+<rect x="90" y="969" width="110" height="2" fill="#e0558f"/>
+<rect x="824" y="969" width="110" height="2" fill="#e0558f"/>
+<rect x="28" y="28" width="968" height="968" fill="none" stroke="#22306a" stroke-width="2"/>
 </svg>
 
 <script>
 (function(){
   const NS = 'http://www.w3.org/2000/svg';
-  let seed = 20261121;
+  let seed = 31415;
   const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
   const el = (parent, tag, attrs) => {
     const n = document.createElementNS(NS, tag);
@@ -246,167 +128,107 @@
     return n;
   };
 
-  // stars in the upper sky
+  // anime cumulus: stacked puffs, lavender shade below, white tops, gold rim toward the sun
+  const cumulus = (g, cx, base, w, h, n) => {
+    for (let i = 0; i < n; i++) {
+      const t = i / n;
+      const y = base - t * h;
+      const spread = w * (1 - t * 0.6);
+      const x = cx + (rnd() - 0.5) * spread;
+      const r = 30 + rnd() * 50 * (1 - t * 0.4);
+      el(g, 'circle', {cx: x, cy: y + r * 0.25, r: r, fill: '#b9b3e0'});
+      el(g, 'circle', {cx: x - r * 0.12, cy: y, r: r * 0.95, fill: '#ffffff'});
+      el(g, 'circle', {cx: x - r * 0.3, cy: y - r * 0.2, r: r * 0.5, fill: '#fff6dc', opacity: 0.8});
+    }
+  };
+  cumulus('cumulus', 900, 640, 260, 420, 26);
+  cumulus('cumulus', 120, 660, 220, 260, 16);
+  cumulus('cumulus', 470, 650, 200, 160, 10);
+
+  // sun rays
+  for (let i = 0; i < 14; i++) {
+    const a = -0.2 + (i / 14) * 1.9;
+    el('rays', 'path', {d: `M190 330 L${190 + Math.cos(a - 0.03) * 1100} ${330 + Math.sin(a - 0.03) * 1100} L${190 + Math.cos(a + 0.03) * 1100} ${330 + Math.sin(a + 0.03) * 1100} Z`, fill: '#fffbe6'});
+  }
+
+  // distant floating isles with tiny trees and threads of waterfall
+  for (const [x, y, s] of [[300, 470, 0.9], [130, 560, 0.6], [960, 610, 0.5], [420, 600, 0.45]]) {
+    el('isles', 'path', {d: `M${x - 50*s} ${y} Q${x} ${y - 10*s} ${x + 50*s} ${y} Q${x + 20*s} ${y + 40*s} ${x} ${y + 80*s} Q${x - 20*s} ${y + 40*s} ${x - 50*s} ${y} Z`, fill: '#8f8cc4', opacity: 0.85});
+    el('isles', 'ellipse', {cx: x, cy: y, rx: 50*s, ry: 6*s, fill: '#8fd47a'});
+    el('isles', 'circle', {cx: x - 10*s, cy: y - 16*s, r: 16*s, fill: '#ffb3d1'});
+    el('isles', 'rect', {x: x + 30*s, y: y, width: 3*s, height: 70*s, fill: '#ffffff', opacity: 0.7});
+  }
+
+  // sea of clouds below the isle
   for (let i = 0; i < 70; i++) {
-    const x = 40 + rnd() * 944, y = 40 + Math.pow(rnd(), 1.6) * 260;
-    el('stars', 'circle', {cx: x, cy: y, r: (0.6 + rnd() * 1.4).toFixed(2), fill: '#fff4d8', opacity: (0.3 + rnd() * 0.6).toFixed(2)});
+    const x = rnd() * 1100 - 40, y = 690 + rnd() * 90;
+    const r = 30 + rnd() * 45;
+    el('cloudsea', 'circle', {cx: x, cy: y + 8, r: r, fill: '#d6d4f2'});
+    el('cloudsea', 'circle', {cx: x - 5, cy: y, r: r * 0.92, fill: '#ffffff'});
   }
 
-  // banks of sunset cloud, dark-bellied and lit gold from below
-  const cloud = (cx, cy, w, n, top, rim) => {
-    for (let i = 0; i < n; i++) {
-      const x = cx - w / 2 + (i + 0.5) * (w / n) + (rnd() - 0.5) * 10;
-      const r = (w / n) * (0.7 + rnd() * 0.5) * (1 - Math.abs(i - (n - 1) / 2) / n * 0.9);
-      el('clouds', 'circle', {cx: x.toFixed(1), cy: (cy - r * 0.35).toFixed(1), r: r.toFixed(1), fill: top});
-    }
-    el('clouds', 'rect', {x: cx - w / 2, y: cy - 6, width: w, height: 12, rx: 6, fill: top});
-    el('clouds', 'rect', {x: cx - w / 2 + 8, y: cy + 2, width: w - 16, height: 5, rx: 2.5, fill: rim});
-  };
-  cloud(190, 318, 300, 7, '#b24f7a', '#ffb08a');
-  cloud(905, 372, 230, 6, '#c75c7a', '#ffc796');
-  cloud(120, 452, 170, 5, '#e07a72', '#ffd9a0');
-  cloud(930, 486, 150, 4, '#ec8c72', '#ffe2a8');
-
-  // golden path of the setting sun on the water
-  for (let y = 646; y < 940; y += 7) {
-    const t = (y - 646) / 300;
-    const half = 36 + t * 150;
-    for (let k = 0; k < 3; k++) {
-      const w = 10 + rnd() * (40 + t * 60);
-      const x = 662 - half + rnd() * (half * 2 - w);
-      el('sunpath', 'rect', {x: x.toFixed(1), y: y + rnd() * 3, width: w.toFixed(1), height: (2 + t * 2.5).toFixed(1), rx: 1.5,
-        fill: rnd() < 0.5 ? '#ffe39c' : '#ffc46a', opacity: (0.85 - t * 0.45).toFixed(2)});
-    }
-  }
-  // the Sunbell tower's broken reflection under the sea stack
-  for (let y = 668, i = 0; y < 800; y += 6, i++) {
-    const t = (y - 668) / 132;
-    const w = 44 * (1 - t * 0.5) + rnd() * 10;
-    el('reflect', 'rect', {x: (664 - w / 2 + (rnd() - 0.5) * 10).toFixed(1), y: y, width: w.toFixed(1), height: 3,
-      rx: 1.5, fill: i % 3 === 0 ? '#ffd27a' : '#ffe9cf', opacity: (1 - t).toFixed(2)});
-  }
-  // soft ripples across the bay
-  for (let i = 0; i < 60; i++) {
-    const y = 660 + Math.pow(rnd(), 1.3) * 270;
-    const x = rnd() * 1024;
-    if (Math.abs(x - 662) < 120 + (y - 646) * 0.5) continue;
-    el('ripples', 'rect', {x: x, y: y, width: 14 + rnd() * 40, height: 2, rx: 1, fill: '#9fd6dc', opacity: (0.15 + rnd() * 0.25).toFixed(2)});
+  // waterfalls pouring off the isle into the clouds
+  for (const [x, w] of [[540, 16], [610, 10], [820, 18], [858, 9]]) {
+    el('falls', 'rect', {x: x, y: 500, width: w, height: 240, fill: 'url(#fall)'});
+    el('falls', 'circle', {cx: x + w / 2, cy: 735, r: 26, fill: '#ffffff', opacity: 0.8});
   }
 
-  // terraced white town on the cliff, windows already lit
-  const cliffTop = x => {
-    const pts = [[0,400],[60,392],[120,410],[190,430],[250,468],[300,510],[350,556],[400,600],[440,640],[470,668]];
-    for (let i = 0; i < pts.length - 1; i++) {
-      const [x0,y0] = pts[i], [x1,y1] = pts[i+1];
-      if (x >= x0 && x <= x1) return y0 + (y1 - y0) * (x - x0) / (x1 - x0);
-    }
-    return 668;
-  };
-  const walls = ['#fbeee0', '#f6dccb', '#fde6c8', '#f3d3d6', '#e9e3f0'];
-  for (let row = 0; row < 6; row++) {
-    for (let x = 6 + row * 8; x < 430; x += 0) {
-      const w = 26 + Math.floor(rnd() * 22);
-      const top = cliffTop(x + w / 2);
-      const y = top + 8 + row * 38 + rnd() * 6;
-      if (y + 30 > 668 || y > cliffTop(x + w) + 210) { x += w + 4; continue; }
-      const h = 24 + rnd() * 14;
-      el('town', 'rect', {x: x, y: y, width: w, height: h, fill: walls[Math.floor(rnd() * walls.length)]});
-      el('town', 'rect', {x: x + w * 0.62, y: y, width: w * 0.38, height: h, fill: '#b98192', opacity: 0.45});
-      if (rnd() < 0.35) el('town', 'path', {d: `M${x-2} ${y} L${x + w/2} ${y - 9} L${x + w + 2} ${y} Z`, fill: '#d0694a'});
-      else el('town', 'rect', {x: x - 1, y: y - 3, width: w + 2, height: 3, fill: '#c98a78'});
-      const nwin = Math.max(1, Math.floor(w / 12));
-      for (let k = 0; k < nwin; k++) {
-        if (rnd() < 0.25) continue;
-        const wx = x + 5 + k * ((w - 10) / nwin);
-        el('town', 'path', {d: `M${wx} ${y + h - 6} v-9 a3 3 0 0 1 6 0 v9 z`, fill: rnd() < 0.8 ? '#ffcf6a' : '#5a3a5c'});
-      }
-      x += w + 3 + rnd() * 6;
-    }
-  }
-  // a little domed chapel at the top of town
-  el('town', 'rect', {x: 92, y: 360, width: 40, height: 42, fill: '#fbeee0'});
-  el('town', 'path', {d: 'M90 360 Q112 326 134 360 Z', fill: '#4f8fb0'});
-  el('town', 'rect', {x: 110, y: 318, width: 4, height: 14, fill: '#e7a24a'});
-  el('town', 'path', {d: 'M106 398 v-14 a6 6 0 0 1 12 0 v14 z', fill: '#ffcf6a'});
-  // strings of festival lights along the terraces
-  for (let row = 0; row < 3; row++) {
-    for (let x = 30 + row * 20; x < 400; x += 15) {
-      const y = cliffTop(x) + 6 + row * 76 + Math.sin(x / 22) * 4;
-      if (y > 650) continue;
-      el('town', 'circle', {cx: x, cy: y, r: 2.2, fill: '#fff0a8', opacity: 0.9});
-    }
-  }
-  // cypress trees
-  for (const [x, y, h] of [[180, 440, 70], [196, 448, 54], [330, 552, 60], [60, 402, 64], [262, 486, 48]]) {
-    el('cypress', 'path', {d: `M${x} ${y} C${x - 11} ${y - h * 0.4} ${x - 6} ${y - h * 0.8} ${x} ${y - h} C${x + 6} ${y - h * 0.8} ${x + 11} ${y - h * 0.4} ${x} ${y} Z`, fill: '#23324a'});
+  // crags on the underside
+  for (let i = 0; i < 26; i++) {
+    const x = 530 + rnd() * 320, y = 520 + rnd() * 150;
+    el('crags', 'path', {d: `M${x} ${y} l${6 + rnd() * 10} ${14 + rnd() * 20} l${-12 - rnd() * 8} 0 z`, fill: rnd() < 0.5 ? '#4b3d6a' : '#a88aa8', opacity: 0.7});
   }
 
-  // sailboats
-  for (const [x, y, s] of [[300, 668, 1.0], [852, 676, 0.8], [470, 724, 1.25], [960, 652, 0.55]]) {
-    el('boats', 'path', {d: `M${x} ${y} l${-18*s} 0 l${4*s} ${7*s} l${30*s} 0 l${4*s} ${-7*s} z`, fill: '#2a1d45'});
-    el('boats', 'path', {d: `M${x} ${y - 3*s} l0 ${-46*s} l${22*s} ${44*s} z`, fill: '#fff1d8'});
-    el('boats', 'path', {d: `M${x - 3*s} ${y - 3*s} l0 ${-34*s} l${-16*s} ${32*s} z`, fill: '#f6b383'});
-    el('boats', 'rect', {x: x - 16*s, y: y + 9*s, width: 34*s, height: 2, fill: '#ffe39c', opacity: 0.6});
+  // a shrine village tucked under the tree: white walls, vermilion roofs
+  for (const [x, w] of [[540, 30], [578, 24], [770, 28], [806, 34], [846, 22]]) {
+    el('houses', 'rect', {x: x, y: 482, width: w, height: 18, fill: '#fff8ee'});
+    el('houses', 'path', {d: `M${x - 6} ${483} Q${x + w / 2} ${468} ${x + w + 6} ${483} Z`, fill: '#e2453c'});
+    el('houses', 'rect', {x: x + w / 2 - 3, y: 490, width: 6, height: 10, fill: '#ffcf6a'});
+  }
+  // a little vermilion pagoda
+  for (let k = 0; k < 3; k++) {
+    const y = 486 - k * 18, w = 40 - k * 9;
+    el('houses', 'rect', {x: 610 - w / 2 + 6, y: y - 8, width: w - 12, height: 10, fill: '#fff8ee'});
+    el('houses', 'path', {d: `M${610 - w / 2 - 6} ${y - 6} Q610 ${y - 18} ${610 + w / 2 + 6} ${y - 6} Z`, fill: '#e2453c'});
   }
 
-  // rays from the bell
-  for (let i = 0; i < 24; i++) {
-    const a = (i / 24) * Math.PI * 2;
-    const r0 = 48, r1 = 70 + (i % 2 ? 40 : 80);
-    el('rays', 'line', {x1: 664 + Math.cos(a) * r0, y1: 266 + Math.sin(a) * r0, x2: 664 + Math.cos(a) * r1, y2: 266 + Math.sin(a) * r1, 'stroke-width': i % 2 ? 2 : 3});
+  // the sakura canopy: hundreds of blossoms, lit from the sun side
+  for (let i = 0; i < 360; i++) {
+    const a = rnd() * Math.PI * 2, d = Math.pow(rnd(), 0.55);
+    const x = 690 + Math.cos(a) * d * 170, y = 345 + Math.sin(a) * d * 95 - (1 - d) * 20;
+    const lit = Math.cos(a + 2.4) > 0.2;
+    el('canopy', 'circle', {cx: x.toFixed(1), cy: y.toFixed(1), r: (10 + rnd() * 16).toFixed(1),
+      fill: lit ? ['#ffd6e8', '#ffe8f2', '#ffc2dc'][Math.floor(rnd() * 3)] : ['#f58cba', '#e86fa6', '#ffa6cb'][Math.floor(rnd() * 3)], opacity: 0.95});
   }
 
-  // wind-combed grass across the headland, all leaning the same way
-  const groundY = x => x < 520 ? 792 + (x / 520) * (790 - 792) - Math.sin(x / 520 * Math.PI) * 16 : 790 + ((x - 520) / 504) * (776 - 790) + Math.sin((x - 520) / 504 * Math.PI) * 14;
-  for (let i = 0; i < 520; i++) {
-    const x = rnd() * 1024;
-    const y = groundY(x) + 6 + Math.pow(rnd(), 0.8) * (960 - groundY(x));
-    if (x > 530 && x < 640 && y > 800) continue;
-    const h = 8 + (y - 780) / 180 * 22 * (0.6 + rnd() * 0.6);
-    el('grass', 'path', {d: `M${x.toFixed(1)} ${y.toFixed(1)} q${(2 + rnd() * 3).toFixed(1)} ${(-h * 0.6).toFixed(1)} ${(6 + rnd() * 6).toFixed(1)} ${(-h).toFixed(1)}`,
-      stroke: rnd() < 0.5 ? '#4f5a32' : '#f2c46a', 'stroke-width': (1 + (y - 780) / 90).toFixed(1), fill: 'none', 'stroke-linecap': 'round', opacity: 0.85});
+  // petals carried on the wind from the tree to the girl
+  for (let i = 0; i < 160; i++) {
+    const t = rnd();
+    const x = 690 - t * 520 + (rnd() - 0.5) * 160;
+    const y = 380 + t * 330 + Math.sin(t * 9) * 40 + (rnd() - 0.5) * 120;
+    el('petals', 'ellipse', {cx: x.toFixed(1), cy: y.toFixed(1), rx: (2 + rnd() * 3).toFixed(1), ry: (1.2 + rnd() * 1.5).toFixed(1),
+      fill: rnd() < 0.6 ? '#ffc2dc' : '#ffffff', transform: `rotate(${(rnd() * 180).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)})`, opacity: 0.95});
   }
-  // wild poppies, lavender and daisies
-  for (let i = 0; i < 260; i++) {
-    const x = rnd() * 1024;
-    const y = groundY(x) + 10 + Math.pow(rnd(), 0.7) * (950 - groundY(x));
-    if (x > 520 && x < 650 && y > 800) continue;
-    if (x > 340 && x < 470 && y > 790 && y < 910) continue;
-    const s = 1.5 + (y - 780) / 170 * 4.5;
-    const k = rnd();
-    if (k < 0.4) el('wildflowers', 'circle', {cx: x, cy: y, r: s, fill: rnd() < 0.8 ? '#e8392f' : '#ff6a3d'});
-    else if (k < 0.7) el('wildflowers', 'ellipse', {cx: x, cy: y, rx: s * 0.5, ry: s * 1.6, fill: '#8a6fd6'});
-    else { el('wildflowers', 'circle', {cx: x, cy: y, r: s * 0.9, fill: '#fffdf4'}); el('wildflowers', 'circle', {cx: x, cy: y, r: s * 0.35, fill: '#f5c22e'}); }
-  }
-  // silver-green olive canopy
-  for (let i = 0; i < 110; i++) {
-    const a = rnd() * Math.PI * 2, d = Math.pow(rnd(), 0.6);
-    const x = 905 + Math.cos(a) * d * 120, y = 690 + Math.sin(a) * d * 70;
-    el('olive', 'ellipse', {cx: x.toFixed(1), cy: y.toFixed(1), rx: (12 + rnd() * 16).toFixed(1), ry: (7 + rnd() * 8).toFixed(1),
-      fill: ['#5d6a4a', '#7a845a', '#434f3a', '#a39a62'][Math.floor(rnd() * 4)], opacity: 0.95});
-  }
-  return;
-  // stone balustrade of a terrace
-  el('balustrade', 'rect', {x: 0, y: 862, width: 1024, height: 90, fill: '#0d6884'});
-  for (let x = 8; x < 1024; x += 34) {
-    el('balustrade', 'path', {d: `M${x} 952 L${x} 940 Q${x - 4} 920 ${x + 6} 900 Q${x - 2} 884 ${x + 4} 874 L${x + 18} 874 Q${x + 24} 884 ${x + 16} 900 Q${x + 26} 920 ${x + 22} 940 L${x + 22} 952 Z`, fill: 'url(#rail)'});
-  }
-  el('balustrade', 'rect', {x: 0, y: 846, width: 1024, height: 22, fill: '#e8b48c'});
-  el('balustrade', 'rect', {x: 0, y: 846, width: 1024, height: 5, fill: '#ffd9a8'});
-  el('balustrade', 'rect', {x: 0, y: 866, width: 1024, height: 5, fill: '#7c4659', opacity: 0.7});
 
-  // bougainvillea in both lower corners
-  const flowers = (g, cx, cy, spread, n) => {
-    for (let i = 0; i < n; i++) {
-      const a = rnd() * Math.PI * 2, d = Math.pow(rnd(), 0.7) * spread;
-      const x = cx + Math.cos(a) * d * 1.3, y = cy + Math.sin(a) * d * 0.8;
-      if (rnd() < 0.3) el(g, 'ellipse', {cx: x, cy: y, rx: 7 + rnd() * 6, ry: 4 + rnd() * 3, fill: rnd() < 0.5 ? '#1f4a3a' : '#2d6046', transform: `rotate(${(rnd() * 180).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)})`});
-      else el(g, 'circle', {cx: x, cy: y, r: 4 + rnd() * 6, fill: ['#e8327c', '#ff5c9a', '#c21f66', '#ff8cbc'][Math.floor(rnd() * 4)], opacity: 0.95});
-    }
-  };
-  flowers('flowersL', 30, 850, 130, 240);
-  flowers('flowersL', 5, 720, 70, 70);
-  flowers('flowersR', 1005, 860, 120, 220);
+  // grass and flowers on the hill
+  for (let i = 0; i < 420; i++) {
+    const x = rnd() * 1024, y = 790 + Math.pow(rnd(), 0.8) * 160;
+    if (x > 230 && x < 340 && y < 905) continue;
+    const h = 8 + (y - 780) / 160 * 20;
+    el('grass', 'path', {d: `M${x.toFixed(1)} ${y.toFixed(1)} q${(-2 - rnd() * 3).toFixed(1)} ${(-h * 0.6).toFixed(1)} ${(-6 - rnd() * 6).toFixed(1)} ${(-h).toFixed(1)}`,
+      stroke: rnd() < 0.5 ? '#2f8a45' : '#d8ff8a', 'stroke-width': (1 + (y - 780) / 80).toFixed(1), fill: 'none', 'stroke-linecap': 'round'});
+  }
+  for (let i = 0; i < 160; i++) {
+    const x = rnd() * 1024, y = 800 + Math.pow(rnd(), 0.7) * 150;
+    if (x > 230 && x < 340 && y < 905) continue;
+    const s = 1.5 + (y - 790) / 150 * 4;
+    el('flowers', 'circle', {cx: x, cy: y, r: s, fill: ['#ffffff', '#ffd1e4', '#fff07a', '#9fd0ff'][Math.floor(rnd() * 4)]});
+  }
+
+  // anime sparkle glints
+  for (const [x, y, s] of [[150, 300, 26], [610, 270, 14], [860, 250, 16], [400, 440, 10]]) {
+    el('sparkle', 'path', {d: `M${x} ${y - s} Q${x} ${y} ${x + s} ${y} Q${x} ${y} ${x} ${y + s} Q${x} ${y} ${x - s} ${y} Q${x} ${y} ${x} ${y - s} Z`, fill: '#ffffff', opacity: 0.95});
+  }
 })();
 </script>
 </body></html>
