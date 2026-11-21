@@ -43,8 +43,9 @@
     <stop offset="1" stop-color="#ffc6df"/>
   </linearGradient>
   <linearGradient id="fall" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
-    <stop offset="1" stop-color="#e6f6ff" stop-opacity="0.1"/>
+    <stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
+    <stop offset="0.7" stop-color="#f0faff" stop-opacity="0.85"/>
+    <stop offset="1" stop-color="#e6f6ff" stop-opacity="0.3"/>
   </linearGradient>
   <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
   <clipPath id="frame"><rect x="28" y="28" width="968" height="914"/></clipPath>
@@ -70,6 +71,7 @@
   <g id="crags"></g>
   <path d="M496 500 Q520 466 600 456 Q700 446 800 460 Q872 470 884 500 Q850 512 690 514 Q540 514 496 500 Z" fill="#7fd36a"/>
   <path d="M496 500 Q540 514 690 514 Q850 512 884 500 Q850 522 690 524 Q540 524 496 500 Z" fill="#4f9f55"/>
+  <path d="M496 500 Q520 466 600 456 Q700 446 800 460" stroke="#fff3c0" stroke-width="4" fill="none" opacity="0.9"/>
   <g id="houses"></g>
   <!-- the great sakura -->
   <circle cx="690" cy="360" r="230" fill="url(#treeglow)"/>
@@ -85,9 +87,9 @@
 
   <!-- the girl on the hill, hat in hand, hair in the wind -->
   <g>
-    <path d="M262 768 C250 730 252 690 262 668 L278 664 C276 700 284 740 300 770 Z" fill="#26346a"/>
-    <path d="M262 676 C232 680 214 700 196 712 C214 708 236 704 256 700 Z" fill="#26346a"/>
-    <path d="M266 672 C226 670 200 690 176 694 C204 700 236 690 262 686 Z" fill="#33468a"/>
+    <path d="M262 792 C254 762 256 732 266 712 L298 712 C302 740 306 770 304 794 Z" fill="#26346a"/>
+    <path d="M270 700 C246 704 224 716 200 742 C222 736 240 734 262 738 C244 748 232 760 222 778 C246 764 264 758 280 756 Z" fill="#26346a"/>
+    <path d="M272 706 C252 712 236 722 218 738 C238 732 254 730 268 732 Z" fill="#4a62b0" opacity="0.8"/>
     <path d="M250 900 C246 840 252 790 262 760 C268 744 300 744 306 760 C316 790 326 840 322 900 Z" fill="#ffffff"/>
     <path d="M296 752 C310 776 322 840 322 900 L306 900 C306 846 300 790 288 760 Z" fill="#cfe0f6"/>
     <path d="M264 758 C252 740 244 724 242 708" stroke="#ffffff" stroke-width="9" stroke-linecap="round" fill="none"/>
@@ -168,9 +170,10 @@
   }
 
   // waterfalls pouring off the isle into the clouds
-  for (const [x, w] of [[540, 16], [610, 10], [820, 18], [858, 9]]) {
-    el('falls', 'rect', {x: x, y: 500, width: w, height: 240, fill: 'url(#fall)'});
-    el('falls', 'circle', {cx: x + w / 2, cy: 735, r: 26, fill: '#ffffff', opacity: 0.8});
+  for (const [x, w] of [[536, 22], [604, 14], [812, 26], [856, 12]]) {
+    el('falls', 'rect', {x: x, y: 498, width: w, height: 250, fill: 'url(#fall)'});
+    el('falls', 'rect', {x: x + w * 0.3, y: 498, width: w * 0.25, height: 230, fill: '#bfe6ff', opacity: 0.6});
+    el('falls', 'circle', {cx: x + w / 2, cy: 740, r: 30, fill: '#ffffff', opacity: 0.9});
   }
 
   // crags on the underside
