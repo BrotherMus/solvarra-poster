@@ -70,6 +70,18 @@
     <feComponentTransfer><feFuncA type="table" tableValues="0 0.07"/></feComponentTransfer>
     <feComposite in2="SourceGraphic" operator="in"/>
   </filter>
+  <linearGradient id="beamR" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#fff2c2" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#ffd27e" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="beamL" x1="1" y1="0" x2="0" y2="0">
+    <stop offset="0" stop-color="#fff2c2" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#ffd27e" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="haze" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#ffd9a0" stop-opacity="0.55"/>
+    <stop offset="1" stop-color="#ffb07a" stop-opacity="0"/>
+  </radialGradient>
   <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
   <clipPath id="frame"><rect x="28" y="28" width="968" height="968"/></clipPath>
 </defs>
@@ -80,14 +92,7 @@
   <rect x="0" y="0" width="1024" height="660" fill="url(#sky)"/>
   <g id="stars"></g>
   <!-- long sunset clouds -->
-  <g opacity="0.75">
-    <rect x="60" y="300" width="300" height="10" rx="5" fill="#f08a78"/>
-    <rect x="120" y="318" width="210" height="7" rx="4" fill="#ffb38a"/>
-    <rect x="770" y="350" width="240" height="9" rx="5" fill="#f0927a"/>
-    <rect x="820" y="366" width="160" height="6" rx="3" fill="#ffc08f"/>
-    <rect x="40" y="440" width="190" height="8" rx="4" fill="#ffc890"/>
-    <rect x="860" y="470" width="150" height="7" rx="4" fill="#ffd59a"/>
-  </g>
+  <g id="clouds"></g>
   <!-- sun -->
   <circle cx="662" cy="590" r="330" fill="url(#sunglow)"/>
   <circle cx="662" cy="600" r="112" fill="#ffe7a6"/>
@@ -98,6 +103,7 @@
 
   <!-- sea -->
   <rect x="0" y="640" width="1024" height="384" fill="url(#sea)"/>
+  <ellipse cx="640" cy="645" rx="520" ry="60" fill="url(#haze)"/>
   <g id="sunpath"></g>
   <g id="ripples"></g>
 
@@ -120,8 +126,11 @@
   <!-- gallery -->
   <rect x="624" y="300" width="80" height="14" rx="2" fill="#f7dcc0"/>
   <rect x="624" y="312" width="80" height="4" fill="#a8606e"/>
+  <!-- the Sunbell's two soft beams across the evening sky -->
+  <path d="M664 262 L1024 170 L1024 300 Z" fill="url(#beamR)" opacity="0.55"/>
+  <path d="M664 262 L250 205 L250 300 Z" fill="url(#beamL)" opacity="0.45"/>
   <!-- bell glow -->
-  <circle cx="664" cy="262" r="150" fill="url(#bellglow)"/>
+  <circle cx="664" cy="262" r="185" fill="url(#bellglow)"/>
   <g id="rays" stroke="#ffe7a3" stroke-linecap="round" opacity="0.55"></g>
   <!-- belvedere with open arches -->
   <rect x="632" y="236" width="64" height="64" fill="#2b1e4d" opacity="0.35"/>
@@ -230,6 +239,21 @@
     el('stars', 'circle', {cx: x, cy: y, r: (0.6 + rnd() * 1.4).toFixed(2), fill: '#fff4d8', opacity: (0.3 + rnd() * 0.6).toFixed(2)});
   }
 
+  // banks of sunset cloud, dark-bellied and lit gold from below
+  const cloud = (cx, cy, w, n, top, rim) => {
+    for (let i = 0; i < n; i++) {
+      const x = cx - w / 2 + (i + 0.5) * (w / n) + (rnd() - 0.5) * 10;
+      const r = (w / n) * (0.7 + rnd() * 0.5) * (1 - Math.abs(i - (n - 1) / 2) / n * 0.9);
+      el('clouds', 'circle', {cx: x.toFixed(1), cy: (cy - r * 0.35).toFixed(1), r: r.toFixed(1), fill: top});
+    }
+    el('clouds', 'rect', {x: cx - w / 2, y: cy - 6, width: w, height: 12, rx: 6, fill: top});
+    el('clouds', 'rect', {x: cx - w / 2 + 8, y: cy + 2, width: w - 16, height: 5, rx: 2.5, fill: rim});
+  };
+  cloud(190, 318, 300, 7, '#b24f7a', '#ffb08a');
+  cloud(905, 372, 230, 6, '#c75c7a', '#ffc796');
+  cloud(120, 452, 170, 5, '#e07a72', '#ffd9a0');
+  cloud(930, 486, 150, 4, '#ec8c72', '#ffe2a8');
+
   // golden path of the setting sun on the water
   for (let y = 646; y < 940; y += 7) {
     const t = (y - 646) / 300;
@@ -337,10 +361,9 @@
       else el(g, 'circle', {cx: x, cy: y, r: 4 + rnd() * 6, fill: ['#e8327c', '#ff5c9a', '#c21f66', '#ff8cbc'][Math.floor(rnd() * 4)], opacity: 0.95});
     }
   };
-  flowers('flowersL', 40, 820, 150, 320);
-  flowers('flowersL', 10, 660, 90, 120);
-  flowers('flowersR', 1000, 840, 140, 300);
-  flowers('flowersR', 1015, 700, 70, 80);
+  flowers('flowersL', 30, 850, 130, 240);
+  flowers('flowersL', 5, 720, 70, 70);
+  flowers('flowersR', 1005, 860, 120, 220);
 })();
 </script>
 </body></html>
