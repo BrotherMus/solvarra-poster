@@ -10,18 +10,17 @@
 <svg id="p" xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
 <defs>
   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#141a46"/>
-    <stop offset="0.30" stop-color="#3b2766"/>
-    <stop offset="0.52" stop-color="#9c3f78"/>
-    <stop offset="0.68" stop-color="#e86f63"/>
-    <stop offset="0.80" stop-color="#ffb066"/>
-    <stop offset="0.86" stop-color="#ffd58a"/>
+    <stop offset="0" stop-color="#1b4fa6"/>
+    <stop offset="0.32" stop-color="#3a86d6"/>
+    <stop offset="0.60" stop-color="#7cc0ef"/>
+    <stop offset="0.80" stop-color="#c4e8f8"/>
+    <stop offset="0.88" stop-color="#fff1d0"/>
   </linearGradient>
   <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#f3a865"/>
-    <stop offset="0.10" stop-color="#c9707a"/>
-    <stop offset="0.35" stop-color="#2f7d93"/>
-    <stop offset="1" stop-color="#0b3350"/>
+    <stop offset="0" stop-color="#bff0ee"/>
+    <stop offset="0.12" stop-color="#5fd0d6"/>
+    <stop offset="0.40" stop-color="#14a2b8"/>
+    <stop offset="1" stop-color="#075a7c"/>
   </linearGradient>
   <radialGradient id="sunglow" cx="0.5" cy="0.5" r="0.5">
     <stop offset="0" stop-color="#fff3c4" stop-opacity="0.95"/>
@@ -51,13 +50,13 @@
     <stop offset="1" stop-color="#b9808a"/>
   </linearGradient>
   <linearGradient id="rock" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#4a2747"/>
-    <stop offset="0.7" stop-color="#7b3f57"/>
-    <stop offset="1" stop-color="#c0675f"/>
+    <stop offset="0" stop-color="#8a5f4e"/>
+    <stop offset="0.6" stop-color="#c08a68"/>
+    <stop offset="1" stop-color="#f0c79a"/>
   </linearGradient>
   <linearGradient id="cliff" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#3a1f45"/>
-    <stop offset="1" stop-color="#7a3d58"/>
+    <stop offset="0" stop-color="#9a6e55"/>
+    <stop offset="1" stop-color="#d6a57c"/>
   </linearGradient>
   <linearGradient id="rail" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0" stop-color="#ffd3a0"/>
@@ -82,6 +81,11 @@
     <stop offset="0" stop-color="#ffd9a0" stop-opacity="0.55"/>
     <stop offset="1" stop-color="#ffb07a" stop-opacity="0"/>
   </radialGradient>
+  <linearGradient id="meadow" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#9fd468"/>
+    <stop offset="0.45" stop-color="#5fa94a"/>
+    <stop offset="1" stop-color="#2f7a3c"/>
+  </linearGradient>
   <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
   <clipPath id="frame"><rect x="28" y="28" width="968" height="968"/></clipPath>
 </defs>
@@ -95,11 +99,9 @@
   <g id="clouds"></g>
   <!-- sun -->
   <circle cx="662" cy="590" r="330" fill="url(#sunglow)"/>
-  <circle cx="662" cy="600" r="112" fill="#ffe7a6"/>
-  <circle cx="662" cy="600" r="112" fill="none" stroke="#fff4cf" stroke-width="3" opacity="0.6"/>
   <!-- distant isles -->
-  <path d="M760 642 Q820 610 870 622 Q930 600 1000 628 L1024 642 Z" fill="#9b4a73" opacity="0.75"/>
-  <path d="M430 642 Q470 628 520 634 Q540 630 560 642 Z" fill="#a8507a" opacity="0.6"/>
+  <path d="M760 642 Q820 610 870 622 Q930 600 1000 628 L1024 642 Z" fill="#6f9cc2" opacity="0.8"/>
+  <path d="M430 642 Q470 628 520 634 Q540 630 560 642 Z" fill="#82acd0" opacity="0.7"/>
 
   <!-- sea -->
   <rect x="0" y="640" width="1024" height="384" fill="url(#sea)"/>
@@ -127,8 +129,6 @@
   <rect x="624" y="300" width="80" height="14" rx="2" fill="#f7dcc0"/>
   <rect x="624" y="312" width="80" height="4" fill="#a8606e"/>
   <!-- the Sunbell's two soft beams across the evening sky -->
-  <path d="M664 262 L1024 170 L1024 300 Z" fill="url(#beamR)" opacity="0.55"/>
-  <path d="M664 262 L250 205 L250 300 Z" fill="url(#beamL)" opacity="0.45"/>
   <!-- bell glow -->
   <circle cx="664" cy="262" r="185" fill="url(#bellglow)"/>
   <g id="rays" stroke="#ffe7a3" stroke-linecap="round" opacity="0.55"></g>
@@ -164,44 +164,54 @@
     <path d="M520 360 q6 -6 12 0 q6 -6 12 0"/>
   </g>
 
-  <!-- foreground terrace -->
-  <g id="balustrade"></g>
-  <g id="flowersL"></g>
-  <g id="flowersR"></g>
-  <!-- two glasses and a lantern on the rail -->
-  <g>
-    <path d="M560 846 l-10 -30 h22 z" fill="#ffe3a8" opacity="0.9"/>
-    <rect x="559" y="846" width="3" height="16" fill="#f6e2c6"/>
-    <rect x="551" y="860" width="19" height="3" rx="1" fill="#f6e2c6"/>
-    <path d="M600 846 l-10 -30 h22 z" fill="#ffe3a8" opacity="0.9"/>
-    <rect x="599" y="846" width="3" height="16" fill="#f6e2c6"/>
-    <rect x="591" y="860" width="19" height="3" rx="1" fill="#f6e2c6"/>
-    <circle cx="660" cy="836" r="40" fill="url(#bellglow)" opacity="0.8"/>
-    <rect x="648" y="822" width="24" height="38" rx="3" fill="#ffd77a"/>
-    <rect x="645" y="816" width="30" height="7" rx="2" fill="#3a2342"/>
-    <rect x="645" y="858" width="30" height="5" rx="2" fill="#3a2342"/>
-    <rect x="658" y="808" width="4" height="9" fill="#3a2342"/>
+  <!-- the kite, flying high toward the Sunbell -->
+  <path d="M452 820 Q640 640 842 420" stroke="#fdf6e8" stroke-width="1.6" fill="none" opacity="0.9"/>
+  <g transform="translate(842 420) rotate(-18)">
+    <path d="M0 -38 L26 0 L0 44 L-26 0 Z" fill="#e8463c"/>
+    <path d="M0 -38 L26 0 L0 0 Z" fill="#ffc93c"/>
+    <path d="M0 0 L-26 0 L0 44 Z" fill="#1f7fb8"/>
+    <path d="M0 44 q-10 16 0 28 q10 14 -2 28 q-10 14 4 30" stroke="#ffd34d" stroke-width="2.5" fill="none"/>
+    <path d="M-6 66 l12 -4 M-8 92 l12 -2 M-4 118 l12 2" stroke="#e8463c" stroke-width="5" stroke-linecap="round"/>
   </g>
 
-  <!-- a couple at the rail, watching the Sunbell -->
+  <!-- the headland meadow, a sandy path running down to the bay -->
+  <path d="M0 792 Q260 760 520 790 Q780 820 1024 776 L1024 960 L0 960 Z" fill="url(#meadow)"/>
+  <path d="M0 792 Q260 760 520 790 Q780 820 1024 776" stroke="#c9ec8a" stroke-width="5" fill="none" opacity="0.8"/>
+  <path d="M520 960 C560 900 600 860 560 830 C540 815 548 800 566 794 L578 796 C566 806 572 818 590 832 C640 868 640 910 640 960 Z" fill="#f2dcae"/>
+  <path d="M580 960 C600 910 610 880 590 850" stroke="#e2c48e" stroke-width="3" fill="none"/>
+  <g id="grass"></g>
+  <g id="wildflowers"></g>
+
+  <!-- an old olive tree framing the right side -->
   <g>
-    <!-- her: sun hat and coral dress -->
-    <path d="M304 954 C300 900 306 820 312 790 C316 774 344 774 348 790 C354 820 362 900 360 954 Z" fill="#c4475a"/>
-    <path d="M340 784 C352 800 358 880 360 954 L348 954 C348 890 344 820 336 790 Z" fill="#ff9a7a" opacity="0.55"/>
-    <rect x="324" y="764" width="12" height="14" rx="4" fill="#8a4a4f"/>
-    <circle cx="330" cy="756" r="16" fill="#5a2f3f"/>
-    <path d="M314 752 Q316 730 330 730 Q344 730 346 752 Z" fill="#f2cf8e"/>
-    <ellipse cx="330" cy="752" rx="40" ry="9" fill="#f6dba0"/>
-    <path d="M310 752 Q330 760 350 752" stroke="#c4475a" stroke-width="4" fill="none"/>
-    <!-- him: cream linen shirt -->
-    <path d="M362 954 C360 900 362 810 368 784 C374 768 418 768 424 784 C430 810 432 900 430 954 Z" fill="#efe1cb"/>
-    <path d="M410 774 C422 790 428 880 430 954 L414 954 C414 890 412 820 404 786 Z" fill="#c9a28e" opacity="0.7"/>
-    <path d="M368 790 C356 800 348 812 344 822 L352 826 C358 816 366 806 374 800 Z" fill="#efe1cb"/>
-    <rect x="389" y="756" width="14" height="16" rx="4" fill="#8a5a50"/>
-    <circle cx="396" cy="744" r="18" fill="#3a2230"/>
-    <path d="M380 738 Q396 720 412 738 Q404 730 396 730 Q388 730 380 738 Z" fill="#24151f"/>
-    <path d="M412 742 a18 18 0 0 1 -4 14" stroke="#ffcf8a" stroke-width="3" fill="none" opacity="0.8"/>
-    <path d="M346 752 a16 16 0 0 1 -2 12" stroke="#ffcf8a" stroke-width="3" fill="none" opacity="0.8"/>
+    <path d="M930 960 C934 900 912 860 920 820 C926 790 900 760 880 740 L896 734 C916 752 936 772 944 800 C950 770 968 750 990 740 L996 750 C976 764 962 790 960 820 C956 860 972 900 976 960 Z" fill="#6b5240"/>
+    <path d="M944 820 C948 860 962 900 966 960 L976 960 C972 900 956 860 960 820 Z" fill="#4a3a2e"/>
+    <g id="olive"></g>
+  </g>
+
+  <!-- mother and child on the grass, the child flying the kite -->
+  <g>
+    <!-- mother, sitting, seen from behind -->
+    <path d="M362 896 C356 860 364 836 384 828 C404 836 412 860 408 896 Z" fill="#2e8f8a"/>
+    <path d="M396 832 C408 846 412 872 408 896 L398 896 C400 870 398 848 390 836 Z" fill="#7cd0c4" opacity="0.6"/>
+    <path d="M326 912 L344 892 L436 892 L452 912 Z" fill="#e2493f"/>
+    <path d="M356 892 L346 912 M378 892 L374 912 M402 892 L404 912 M424 892 L432 912" stroke="#fff3e0" stroke-width="4"/>
+    <path d="M362 876 C350 884 346 896 352 904" stroke="#2e8f8a" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <rect x="379" y="814" width="11" height="14" rx="4" fill="#a86a50"/>
+    <circle cx="384" cy="806" r="15" fill="#3b2418"/>
+    <circle cx="384" cy="788" r="8" fill="#3b2418"/>
+    <path d="M370 804 q14 -10 28 0" stroke="#f2b84a" stroke-width="3" fill="none"/>
+    <!-- her arm around the child -->
+    <path d="M404 846 C420 852 432 852 440 846" stroke="#2e8f8a" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <!-- child, standing, one arm up holding the kite string -->
+    <path d="M436 900 L438 870 L446 870 L448 900 Z" fill="#f7f1e3"/>
+    <path d="M454 900 L452 870 L460 870 L462 900 Z" fill="#f7f1e3"/>
+    <path d="M432 874 C430 852 436 838 448 834 C460 838 466 852 464 874 Z" fill="#f2c13c"/>
+    <path d="M456 840 C458 830 456 822 452 818" stroke="#f2c13c" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <circle cx="452" cy="818" r="4" fill="#a86a50"/>
+    <circle cx="448" cy="822" r="0" fill="none"/>
+    <circle cx="447" cy="824" r="11" fill="#5a3420"/>
+    <path d="M438 820 q9 -10 18 0" stroke="#7a4a2c" stroke-width="3" fill="none"/>
   </g>
 
   <!-- title -->
@@ -234,7 +244,7 @@
   };
 
   // stars in the upper sky
-  for (let i = 0; i < 70; i++) {
+  for (let i = 0; i < 0; i++) {
     const x = 40 + rnd() * 944, y = 40 + Math.pow(rnd(), 1.6) * 260;
     el('stars', 'circle', {cx: x, cy: y, r: (0.6 + rnd() * 1.4).toFixed(2), fill: '#fff4d8', opacity: (0.3 + rnd() * 0.6).toFixed(2)});
   }
@@ -249,10 +259,10 @@
     el('clouds', 'rect', {x: cx - w / 2, y: cy - 6, width: w, height: 12, rx: 6, fill: top});
     el('clouds', 'rect', {x: cx - w / 2 + 8, y: cy + 2, width: w - 16, height: 5, rx: 2.5, fill: rim});
   };
-  cloud(190, 318, 300, 7, '#b24f7a', '#ffb08a');
-  cloud(905, 372, 230, 6, '#c75c7a', '#ffc796');
-  cloud(120, 452, 170, 5, '#e07a72', '#ffd9a0');
-  cloud(930, 486, 150, 4, '#ec8c72', '#ffe2a8');
+  cloud(190, 318, 300, 7, '#fbfdff', '#cfe2f1');
+  cloud(905, 372, 230, 6, '#ffffff', '#d4e7f3');
+  cloud(120, 452, 170, 5, '#fffaf0', '#e2eef5');
+  cloud(930, 486, 150, 4, '#fffaf0', '#e2eef5');
 
   // golden path of the setting sun on the water
   for (let y = 646; y < 940; y += 7) {
@@ -262,7 +272,7 @@
       const w = 10 + rnd() * (40 + t * 60);
       const x = 662 - half + rnd() * (half * 2 - w);
       el('sunpath', 'rect', {x: x.toFixed(1), y: y + rnd() * 3, width: w.toFixed(1), height: (2 + t * 2.5).toFixed(1), rx: 1.5,
-        fill: rnd() < 0.5 ? '#ffe39c' : '#ffc46a', opacity: (0.85 - t * 0.45).toFixed(2)});
+        fill: rnd() < 0.5 ? '#ffffff' : '#fff3c8', opacity: (0.85 - t * 0.45).toFixed(2)});
     }
   }
   // the Sunbell tower's broken reflection under the sea stack
@@ -305,7 +315,7 @@
       for (let k = 0; k < nwin; k++) {
         if (rnd() < 0.25) continue;
         const wx = x + 5 + k * ((w - 10) / nwin);
-        el('town', 'path', {d: `M${wx} ${y + h - 6} v-9 a3 3 0 0 1 6 0 v9 z`, fill: rnd() < 0.8 ? '#ffcf6a' : '#5a3a5c'});
+        el('town', 'path', {d: `M${wx} ${y + h - 6} v-9 a3 3 0 0 1 6 0 v9 z`, fill: rnd() < 0.7 ? '#2f6f9a' : '#3f8f8a'});
       }
       x += w + 3 + rnd() * 6;
     }
@@ -343,8 +353,38 @@
     el('rays', 'line', {x1: 664 + Math.cos(a) * r0, y1: 266 + Math.sin(a) * r0, x2: 664 + Math.cos(a) * r1, y2: 266 + Math.sin(a) * r1, 'stroke-width': i % 2 ? 2 : 3});
   }
 
+  // wind-combed grass across the headland, all leaning the same way
+  const groundY = x => x < 520 ? 792 + (x / 520) * (790 - 792) - Math.sin(x / 520 * Math.PI) * 16 : 790 + ((x - 520) / 504) * (776 - 790) + Math.sin((x - 520) / 504 * Math.PI) * 14;
+  for (let i = 0; i < 520; i++) {
+    const x = rnd() * 1024;
+    const y = groundY(x) + 6 + Math.pow(rnd(), 0.8) * (960 - groundY(x));
+    if (x > 530 && x < 640 && y > 800) continue;
+    const h = 8 + (y - 780) / 180 * 22 * (0.6 + rnd() * 0.6);
+    el('grass', 'path', {d: `M${x.toFixed(1)} ${y.toFixed(1)} q${(2 + rnd() * 3).toFixed(1)} ${(-h * 0.6).toFixed(1)} ${(6 + rnd() * 6).toFixed(1)} ${(-h).toFixed(1)}`,
+      stroke: rnd() < 0.5 ? '#3d8a3a' : '#b6e07a', 'stroke-width': (1 + (y - 780) / 90).toFixed(1), fill: 'none', 'stroke-linecap': 'round', opacity: 0.85});
+  }
+  // wild poppies, lavender and daisies
+  for (let i = 0; i < 260; i++) {
+    const x = rnd() * 1024;
+    const y = groundY(x) + 10 + Math.pow(rnd(), 0.7) * (950 - groundY(x));
+    if (x > 520 && x < 650 && y > 800) continue;
+    if (x > 340 && x < 470 && y > 790 && y < 910) continue;
+    const s = 1.5 + (y - 780) / 170 * 4.5;
+    const k = rnd();
+    if (k < 0.4) el('wildflowers', 'circle', {cx: x, cy: y, r: s, fill: rnd() < 0.8 ? '#e8392f' : '#ff6a3d'});
+    else if (k < 0.7) el('wildflowers', 'ellipse', {cx: x, cy: y, rx: s * 0.5, ry: s * 1.6, fill: '#8a6fd6'});
+    else { el('wildflowers', 'circle', {cx: x, cy: y, r: s * 0.9, fill: '#fffdf4'}); el('wildflowers', 'circle', {cx: x, cy: y, r: s * 0.35, fill: '#f5c22e'}); }
+  }
+  // silver-green olive canopy
+  for (let i = 0; i < 110; i++) {
+    const a = rnd() * Math.PI * 2, d = Math.pow(rnd(), 0.6);
+    const x = 905 + Math.cos(a) * d * 120, y = 690 + Math.sin(a) * d * 70;
+    el('olive', 'ellipse', {cx: x.toFixed(1), cy: y.toFixed(1), rx: (12 + rnd() * 16).toFixed(1), ry: (7 + rnd() * 8).toFixed(1),
+      fill: ['#7f9f6a', '#9cb886', '#5f8456', '#b7cc9e'][Math.floor(rnd() * 4)], opacity: 0.95});
+  }
+  return;
   // stone balustrade of a terrace
-  el('balustrade', 'rect', {x: 0, y: 862, width: 1024, height: 90, fill: '#5b3150'});
+  el('balustrade', 'rect', {x: 0, y: 862, width: 1024, height: 90, fill: '#0d6884'});
   for (let x = 8; x < 1024; x += 34) {
     el('balustrade', 'path', {d: `M${x} 952 L${x} 940 Q${x - 4} 920 ${x + 6} 900 Q${x - 2} 884 ${x + 4} 874 L${x + 18} 874 Q${x + 24} 884 ${x + 16} 900 Q${x + 26} 920 ${x + 22} 940 L${x + 22} 952 Z`, fill: 'url(#rail)'});
   }
