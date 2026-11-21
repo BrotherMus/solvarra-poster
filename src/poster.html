@@ -105,6 +105,7 @@
   <path d="M548 660 L566 612 L584 590 L600 566 L626 556 L700 552 L728 562 L748 590 L764 618 L780 660 Z" fill="url(#rock)"/>
   <path d="M700 552 L728 562 L748 590 L764 618 L780 660 L742 660 L732 610 L712 576 Z" fill="#d97a64" opacity="0.55"/>
   <ellipse cx="664" cy="664" rx="140" ry="8" fill="#ffd28a" opacity="0.35"/>
+  <g id="reflect" opacity="0.35"></g>
   <!-- tower shaft -->
   <path d="M630 558 L640 312 L688 312 L698 558 Z" fill="url(#tower)"/>
   <g fill="#e2a24a" opacity="0.9">
@@ -173,6 +174,27 @@
     <rect x="658" y="808" width="4" height="9" fill="#3a2342"/>
   </g>
 
+  <!-- a couple at the rail, watching the Sunbell -->
+  <g>
+    <!-- her: sun hat and coral dress -->
+    <path d="M304 954 C300 900 306 820 312 790 C316 774 344 774 348 790 C354 820 362 900 360 954 Z" fill="#c4475a"/>
+    <path d="M340 784 C352 800 358 880 360 954 L348 954 C348 890 344 820 336 790 Z" fill="#ff9a7a" opacity="0.55"/>
+    <rect x="324" y="764" width="12" height="14" rx="4" fill="#8a4a4f"/>
+    <circle cx="330" cy="756" r="16" fill="#5a2f3f"/>
+    <path d="M314 752 Q316 730 330 730 Q344 730 346 752 Z" fill="#f2cf8e"/>
+    <ellipse cx="330" cy="752" rx="40" ry="9" fill="#f6dba0"/>
+    <path d="M310 752 Q330 760 350 752" stroke="#c4475a" stroke-width="4" fill="none"/>
+    <!-- him: cream linen shirt -->
+    <path d="M362 954 C360 900 362 810 368 784 C374 768 418 768 424 784 C430 810 432 900 430 954 Z" fill="#efe1cb"/>
+    <path d="M410 774 C422 790 428 880 430 954 L414 954 C414 890 412 820 404 786 Z" fill="#c9a28e" opacity="0.7"/>
+    <path d="M368 790 C356 800 348 812 344 822 L352 826 C358 816 366 806 374 800 Z" fill="#efe1cb"/>
+    <rect x="389" y="756" width="14" height="16" rx="4" fill="#8a5a50"/>
+    <circle cx="396" cy="744" r="18" fill="#3a2230"/>
+    <path d="M380 738 Q396 720 412 738 Q404 730 396 730 Q388 730 380 738 Z" fill="#24151f"/>
+    <path d="M412 742 a18 18 0 0 1 -4 14" stroke="#ffcf8a" stroke-width="3" fill="none" opacity="0.8"/>
+    <path d="M346 752 a16 16 0 0 1 -2 12" stroke="#ffcf8a" stroke-width="3" fill="none" opacity="0.8"/>
+  </g>
+
   <!-- title -->
   <text x="512" y="196" text-anchor="middle" class="title" font-size="186" textLength="880" lengthAdjust="spacingAndGlyphs" fill="#1b1036" opacity="0.55" transform="translate(5,7)">SOLVARRA</text>
   <text x="512" y="196" text-anchor="middle" class="title" font-size="186" textLength="880" lengthAdjust="spacingAndGlyphs" fill="#9a4a1e" transform="translate(2,3)">SOLVARRA</text>
@@ -218,6 +240,13 @@
       el('sunpath', 'rect', {x: x.toFixed(1), y: y + rnd() * 3, width: w.toFixed(1), height: (2 + t * 2.5).toFixed(1), rx: 1.5,
         fill: rnd() < 0.5 ? '#ffe39c' : '#ffc46a', opacity: (0.85 - t * 0.45).toFixed(2)});
     }
+  }
+  // the Sunbell tower's broken reflection under the sea stack
+  for (let y = 668, i = 0; y < 800; y += 6, i++) {
+    const t = (y - 668) / 132;
+    const w = 44 * (1 - t * 0.5) + rnd() * 10;
+    el('reflect', 'rect', {x: (664 - w / 2 + (rnd() - 0.5) * 10).toFixed(1), y: y, width: w.toFixed(1), height: 3,
+      rx: 1.5, fill: i % 3 === 0 ? '#ffd27a' : '#ffe9cf', opacity: (1 - t).toFixed(2)});
   }
   // soft ripples across the bay
   for (let i = 0; i < 60; i++) {
