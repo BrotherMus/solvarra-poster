@@ -10,11 +10,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
 <defs>
   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#0e3f9e"/>
-    <stop offset="0.35" stop-color="#2c7fe0"/>
-    <stop offset="0.62" stop-color="#7cc4f4"/>
-    <stop offset="0.80" stop-color="#ffd9b8"/>
-    <stop offset="0.90" stop-color="#ffb995"/>
+    <stop offset="0" stop-color="#1a1d5a"/>
+    <stop offset="0.30" stop-color="#4b2d7a"/>
+    <stop offset="0.55" stop-color="#c44f86"/>
+    <stop offset="0.72" stop-color="#ff8a6a"/>
+    <stop offset="0.86" stop-color="#ffc77a"/>
   </linearGradient>
   <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
     <stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
@@ -33,9 +33,9 @@
     <stop offset="1" stop-color="#d8a7a4"/>
   </linearGradient>
   <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#b8ec6e"/>
-    <stop offset="0.4" stop-color="#5fbf55"/>
-    <stop offset="1" stop-color="#1f7a4a"/>
+    <stop offset="0" stop-color="#e8c05e"/>
+    <stop offset="0.4" stop-color="#7a9a48"/>
+    <stop offset="1" stop-color="#2f4a3a"/>
   </linearGradient>
   <linearGradient id="titlefill" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0" stop-color="#ffffff"/>
@@ -138,9 +138,9 @@
       const spread = w * (1 - t * 0.6);
       const x = cx + (rnd() - 0.5) * spread;
       const r = 30 + rnd() * 50 * (1 - t * 0.4);
-      el(g, 'circle', {cx: x, cy: y + r * 0.25, r: r, fill: '#b9b3e0'});
-      el(g, 'circle', {cx: x - r * 0.12, cy: y, r: r * 0.95, fill: '#ffffff'});
-      el(g, 'circle', {cx: x - r * 0.3, cy: y - r * 0.2, r: r * 0.5, fill: '#fff6dc', opacity: 0.8});
+      el(g, 'circle', {cx: x, cy: y + r * 0.25, r: r, fill: '#8a4f8e'});
+      el(g, 'circle', {cx: x - r * 0.12, cy: y, r: r * 0.95, fill: '#f49a8e'});
+      el(g, 'circle', {cx: x - r * 0.3, cy: y - r * 0.2, r: r * 0.5, fill: '#ffd59a', opacity: 0.9});
     }
   };
   cumulus('cumulus', 900, 640, 260, 420, 26);
@@ -165,15 +165,15 @@
   for (let i = 0; i < 70; i++) {
     const x = rnd() * 1100 - 40, y = 690 + rnd() * 90;
     const r = 30 + rnd() * 45;
-    el('cloudsea', 'circle', {cx: x, cy: y + 8, r: r, fill: '#d6d4f2'});
-    el('cloudsea', 'circle', {cx: x - 5, cy: y, r: r * 0.92, fill: '#ffffff'});
+    el('cloudsea', 'circle', {cx: x, cy: y + 8, r: r, fill: '#b7708e'});
+    el('cloudsea', 'circle', {cx: x - 5, cy: y, r: r * 0.92, fill: '#ffc9a8'});
   }
 
   // waterfalls pouring off the isle into the clouds
   for (const [x, w] of [[536, 22], [604, 14], [812, 26], [856, 12]]) {
     el('falls', 'rect', {x: x, y: 498, width: w, height: 250, fill: 'url(#fall)'});
     el('falls', 'rect', {x: x + w * 0.3, y: 498, width: w * 0.25, height: 230, fill: '#bfe6ff', opacity: 0.6});
-    el('falls', 'circle', {cx: x + w / 2, cy: 740, r: 30, fill: '#ffffff', opacity: 0.9});
+    el('falls', 'ellipse', {cx: x + w / 2, cy: 744, rx: 26, ry: 9, fill: '#fff1e6', opacity: 0.55});
   }
 
   // crags on the underside
